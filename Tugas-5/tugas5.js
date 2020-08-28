@@ -46,13 +46,16 @@ console.log(perkenalan);
 console.log("\n");
 
 // Soal 4
+var arrayDaftarPeserta = ["Asep", "laki-laki", "baca buku", 1992];
+
 var objDaftarPeserta = {
-  nama: "Asep",
-  "jenis kelamin": "laki-laki",
-  hobi: "baca buku",
-  "tahun lahir": 1992,
+  nama: arrayDaftarPeserta[0],
+  jenisKelamin: arrayDaftarPeserta[1],
+  hobi: arrayDaftarPeserta[2],
+  tahunLahir: arrayDaftarPeserta[3],
 };
 
+console.log(objDaftarPeserta);
 console.log("\n");
 
 // Soal 5
@@ -60,25 +63,25 @@ var buah = [
   {
     nama: "strawberry",
     warna: "merah",
-    "ada bijinya": "tidak",
+    adaBijinya: false,
     harga: 9000,
   },
   {
     nama: "jeruk",
     warna: "oranye",
-    "ada bijinya": "ada",
+    adaBijinya: true,
     harga: 8000,
   },
   {
     nama: "Semangka",
     warna: "Hijau & Merah",
-    "ada bijinya": "ada",
+    adaBijinya: true,
     harga: 10000,
   },
   {
     nama: "Pisang",
     warna: "Kuning",
-    "ada bijinya": "tidak",
+    adaBijinya: false,
     harga: 5000,
   },
 ];
