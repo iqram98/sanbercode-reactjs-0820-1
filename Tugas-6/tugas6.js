@@ -1,12 +1,14 @@
 // Soal 1
 console.log("--Soal 1--");
-console.log("Luas Lingkaran");
 
-let luasLingkaran = (jari) => console.log(3.14 * jari * jari);
+let luasLingkaran = (jari) =>
+  console.log(`Luas lingkaran dengan jari-jari 4 adalah ${3.14 * jari * jari}`);
 luasLingkaran(4);
 
-console.log("Keliling Lingkaran");
-const kelilingLingkaran = (jari) => console.log(3.14 * jari * 2);
+const kelilingLingkaran = (jari) =>
+  console.log(
+    `Keliling lingkaran dengan jari-jari 4 adalah ${3.14 * jari * 2}`
+  );
 kelilingLingkaran(4);
 
 // Soal 2
@@ -32,7 +34,7 @@ const newFunction = (firstName, lastName) => {
     firstName,
     lastName,
     fullName: () => {
-      console.log(firstName + " " + lastName);
+      console.log(`${firstName} ${lastName}`);
       return;
     },
   };
