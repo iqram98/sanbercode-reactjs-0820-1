@@ -15,15 +15,13 @@ kelilingLingkaran(4);
 console.log("\n--Soal 2--");
 
 let kalimat = "";
-let menambahkanKata = (kata) => {
-  kalimat += `${kata} `;
+let menambhkanKata = (...kata) => {
+  kata.forEach((element) => {
+    kalimat += `${element} `;
+  });
 };
 
-menambahkanKata("saya");
-menambahkanKata("adalah");
-menambahkanKata("seorang");
-menambahkanKata("frontend");
-menambahkanKata("developer");
+menambhkanKata("saya", "adalah", "seorang", "frontend", "developer");
 console.log(kalimat);
 
 // Soal 3
@@ -35,7 +33,6 @@ const newFunction = (firstName, lastName) => {
     lastName,
     fullName: () => {
       console.log(`${firstName} ${lastName}`);
-      return;
     },
   };
 };
