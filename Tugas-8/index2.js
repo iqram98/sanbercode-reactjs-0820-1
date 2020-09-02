@@ -6,32 +6,20 @@ var books = [
   { name: "Kalkulus", timeSpent: 4000 },
 ];
 
-function bacaBuku() {
-  readBooksPromise(10000, books[0])
-    .then((result) => {
-      if (result >= 0) {
-        readBooksPromise(result, books[1])
-          .then((result) => {
-            if (result >= 0) {
-              readBooksPromise(result, books[2])
-                .then((result) => {
-                  if (result >= 0) {
-                    console.log("buku habis");
-                  }
-                })
-                .catch((err) => {
-                  console.log(err.massage);
-                });
-            }
-          })
-          .catch((err) => {
-            console.log(err.massage);
-          });
-      }
-    })
-    .catch((err) => {
-      console.log(err.massage);
-    });
+function bacaBuku(waktu, books, indeks) {
+  if (indeks < books.length) {
+    readBooksPromise(waktu, books[indeks])
+      .then((result) => {
+        if (result > 0) {
+          bacaBuku(result, books, indeks + 1);
+        }
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  } else {
+    console.log("buku habis");
+  }
 }
 
-bacaBuku();
+bacaBuku(8000, books, 0);

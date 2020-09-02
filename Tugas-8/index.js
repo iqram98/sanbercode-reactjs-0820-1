@@ -7,28 +7,16 @@ var books = [
   { name: "komik", timeSpent: 1000 },
 ];
 
-readBooks(10000, books[0], function (waktu) {
-  if (waktu > 0) {
-    readBooks(waktu, books[1], function (waktu) {
-      if (waktu > 0) {
-        readBooks(waktu, books[2], function (waktu) {
-          if (waktu > 0) {
-            readBooks(waktu, books[3], function (waktu) {
-              if (waktu > 0) {
-                console.log("Buku Habis");
-              } else {
-                console.log("waktu saya habis");
-              }
-            });
-          } else {
-            console.log("waktu saya habis");
-          }
-        });
-      } else {
-        console.log("waktu saya habis");
+function bacaBooks(waktu, books, indeks = 0) {
+  if (indeks < books.length) {
+    readBooks(waktu, books[indeks], function (sisa) {
+      if (sisa > 0) {
+        bacaBooks(sisa, books, indeks + 1);
       }
     });
   } else {
-    console.log("waktu saya habis");
+    console.log("buku habis");
   }
-});
+}
+
+bacaBooks(6000, books);
