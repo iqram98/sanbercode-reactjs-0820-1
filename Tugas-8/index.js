@@ -19,4 +19,4 @@ function bacaBooks(waktu, books, indeks = 0) {
   }
 }
 
-bacaBooks(6000, books);
+bacaBooks(10000, books);
