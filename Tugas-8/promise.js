@@ -9,8 +9,10 @@ function readBooksPromise(time, book) {
         );
         resolve(sisaWaktu);
       } else {
-        console.log(`saya sudah tidak punya waktu untuk baca ${book.name}`);
-        reject(sisaWaktu);
+        let error = new Error(
+          `saya sudah tidak punya waktu untuk baca ${book.name}`
+        );
+        reject(error);
       }
     }, book.timeSpent);
   });

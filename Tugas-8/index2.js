@@ -6,12 +6,12 @@ var books = [
   { name: "Kalkulus", timeSpent: 4000 },
 ];
 
-function bacaBuku(waktu, books, indeks) {
+function bacaBooks(waktu, books, indeks = 0) {
   if (indeks < books.length) {
     readBooksPromise(waktu, books[indeks])
       .then((result) => {
-        if (result > 0) {
-          bacaBuku(result, books, indeks + 1);
+        if (result >= 0) {
+          bacaBooks(result, books, indeks + 1);
         }
       })
       .catch((err) => {
@@ -22,4 +22,4 @@ function bacaBuku(waktu, books, indeks) {
   }
 }
 
-bacaBuku(8000, books, 0);
+bacaBooks(6000, books);
